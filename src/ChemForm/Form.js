@@ -1,4 +1,8 @@
 import  { useState } from 'react';
+import './Form.css'
+import Navigation from '../components/Navigation';
+import AlertMessage from '../components/AlertMessage';
+
 
 
 function ChemicalLevelsForm() {
@@ -6,16 +10,31 @@ function ChemicalLevelsForm() {
     const [ph, setPH] = useState('');
     const [alkalinity, setAlkalinity] = useState('');
     const [stabilizer, setStabilizer] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Handle form submission here
         console.log("Submitted values: ", { chlorine, ph, alkalinity, stabilizer });
+        setSubmitted(true);
     }
 
     return (
+        <div className='chem-form-page'>
+            <style>
+                {`
+                    body {
+                        background-color: #222;
+                        margin: 0;
+                        padding: 0;
+                    }
+                `}
+            </style>
+            <Navigation />
+            <div className='header'>
+                <h2>Chemical Levels</h2>
+            </div>
         <div className ="Form" > 
-            <h2>Chemical Levels</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="chlorine">Chlorine (ppm):</label>
                 <input 
@@ -63,7 +82,10 @@ function ChemicalLevelsForm() {
 
                 <input type="submit" value="Submit" />
             </form>
+            {submitted && <AlertMessage chlorine={chlorine} ph={ph} alkalinity={alkalinity} stabilizer={stabilizer} />}
         </div>
+        </div>
+        
     );
 }
 

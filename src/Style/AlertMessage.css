@@ -1,0 +1,8 @@
+.alert{
+    width: 80%; /* Set the width of the form */
+    max-width: 600px; /* Set a maximum width to prevent the form from becoming too wide */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}

@@ -2,21 +2,21 @@ import React from 'react';
 import './App.css';
 import ChemicalLevelsForm from './ChemForm/Form.js';
 import { Route, Routes } from 'react-router-dom';
+import Cover from './components/CoverPage';
 
-import {HeaderContent} from './components/Header'
-import { Layout } from 'antd';
 
-const { Header, Footer, Content } = Layout
+
 
 
 
 function App() {
   return (
-    <Layout>
-    <Header>Header</Header>
-    <Content>Content</Content>
-    <Footer>Footer</Footer>
-    </Layout> 
+    <div className='app'>
+    <Routes>
+      <Route path='/' Component={Cover}/>
+      <Route path='/form' Component={ChemicalLevelsForm}/>
+    </Routes>
+    </div>
   );
 }
 
