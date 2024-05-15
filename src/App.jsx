@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ChemicalLevelsForm from './ChemForm/Form.js';
+import ChemicalLevelsForm from './components/ChemForm/Form';
 import { Route, Routes } from 'react-router-dom';
 import Cover from './components/CoverPage';
 

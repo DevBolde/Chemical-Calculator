@@ -1,8 +1,8 @@
 import  { useState } from 'react';
-import './Form.css'
-import Navigation from '../components/Navigation';
-import AlertMessage from '../components/AlertMessage';
-
+import '../../Style/Form.css'
+import Navigation from '../Navigation';
+import AlertMessage from '../AlertMessage';
+import Footer from '../Footer';
 
 
 function ChemicalLevelsForm() {
@@ -21,15 +21,6 @@ function ChemicalLevelsForm() {
 
     return (
         <div className='chem-form-page'>
-            <style>
-                {`
-                    body {
-                        background-color: #222;
-                        margin: 0;
-                        padding: 0;
-                    }
-                `}
-            </style>
             <Navigation />
             <div className='header'>
                 <h2>Chemical Levels</h2>
@@ -84,6 +75,7 @@ function ChemicalLevelsForm() {
             </form>
             {submitted && <AlertMessage chlorine={chlorine} ph={ph} alkalinity={alkalinity} stabilizer={stabilizer} />}
         </div>
+            <Footer />
         </div>
         
     );

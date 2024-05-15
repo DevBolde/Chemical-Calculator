@@ -1,0 +1,19 @@
+/* Form.css */
+
+/* Target the list items (li) within the navigation */
+.navigation li {
+    color: white; /* Set the color of the list items */
+    list-style: none; /* Remove the bullet points */
+    font-size: 23px ;
+}
+
+/* Target the anchor (Link) elements within the list items */
+.navigation li a {
+    color: white; /* Set the color of the anchor elements */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Target the visited state of the anchor elements */
+.navigation li a:visited {
+    color: white; /* Set the color of visited links */
+}
