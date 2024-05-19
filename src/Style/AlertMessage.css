@@ -6,3 +6,27 @@
     border-radius: 8px;
     background-color: #f9f9f9;
 }
+.alert {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-section {
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.info {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column p {
+    margin: 0;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+

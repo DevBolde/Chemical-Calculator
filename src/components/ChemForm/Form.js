@@ -21,11 +21,12 @@ function ChemicalLevelsForm() {
 
     return (
         <div className='chem-form-page'>
-            <Navigation />
-            <div className='header'>
-                <h2>Chemical Levels</h2>
-            </div>
-        <div className ="Form" > 
+    <Navigation />
+    <div className='header'>
+        <h2>Chemical Levels</h2>
+    </div>
+    <div className='form-container'>
+        <div className='Form'>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="chlorine">Chlorine (ppm):</label>
                 <input 
@@ -75,8 +76,10 @@ function ChemicalLevelsForm() {
             </form>
             {submitted && <AlertMessage chlorine={chlorine} ph={ph} alkalinity={alkalinity} stabilizer={stabilizer} />}
         </div>
-            <Footer />
-        </div>
+    </div>
+    <Footer />
+</div>
+
         
     );
 }
