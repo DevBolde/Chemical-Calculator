@@ -23,7 +23,7 @@ const BackendMessage = () => {
     }, []);
     
     return (
-        <div className={`alert ${isVisible ? 'show' : ''}`}>
+        <div className={`alert-backend ${isVisible ? 'show' : ''}`}>
             {message}
         </div>
     );
