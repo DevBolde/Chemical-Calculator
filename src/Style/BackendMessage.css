@@ -1,0 +1,8 @@
+.alert {
+    opacity: 0;
+    transition: opacity 1s ease; /* Define transition effect */
+}
+
+.alert.show {
+    opacity: 1;
+}

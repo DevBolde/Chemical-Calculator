@@ -40,3 +40,7 @@ body {
 }
 
 
+.backend-message{
+  display:flex;
+  justify-content: center;
+}

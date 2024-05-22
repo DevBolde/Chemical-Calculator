@@ -1,9 +1,9 @@
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import '../../Style/Form.css'
 import Navigation from '../Navigation';
 import AlertMessage from '../AlertMessage';
 import Footer from '../Footer';
-
+import BackendMessage from '../BackendMessage';
 
 function ChemicalLevelsForm() {
     const [chlorine, setChlorine] = useState('');
@@ -11,20 +11,28 @@ function ChemicalLevelsForm() {
     const [alkalinity, setAlkalinity] = useState('');
     const [stabilizer, setStabilizer] = useState('');
     const [submitted, setSubmitted] = useState(false);
-
+    const [isVisible, setIsVisible] = useState(true)
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Submitted values: ", { chlorine, ph, alkalinity, stabilizer });
         setSubmitted(true);
     }
-
+    useEffect(() => {
+        const timer= setTimeout(() => {
+            setIsVisible(false)
+        }, 4000)
+        return () => clearTimeout(timer)
+    }, []);
+    
     return (
         <div className='chem-form-page'>
     <Navigation />
+    
     <div className='header'>
         <h2>Chemical Levels</h2>
     </div>
+    <div className='backend-message'><p>{isVisible && <BackendMessage />}</p></div>
     <div className='form-container'>
         <div className='Form'>
             <form onSubmit={handleSubmit}>

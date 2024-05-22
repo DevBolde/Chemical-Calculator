@@ -2,6 +2,7 @@ import React from "react";
 import { imageUrl } from "../Img-URL/config";
 import { Link } from "react-router-dom";
 import '../Style/CoverPage.css'; 
+import Footer from "./Footer";
 
 const Cover = () => {
     return (
@@ -17,6 +18,7 @@ const Cover = () => {
             <footer>
                 <h2>**CLICK THE PHOTO TO BEGIN!**</h2>
             </footer>
+            <Footer style={{ backgroundColor: '#222', color: 'white'}}/>
         </div>
     );
 };
