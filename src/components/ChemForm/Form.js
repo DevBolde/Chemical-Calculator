@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import BackendMessage from '../BackendMessage';
 
 function ChemicalLevelsForm() {
+    const [poolSize, setPoolSize] = useState('');
     const [chlorine, setChlorine] = useState('');
     const [ph, setPH] = useState('');
     const [alkalinity, setAlkalinity] = useState('');
@@ -32,10 +33,22 @@ function ChemicalLevelsForm() {
     <div className='header'>
         <h2>Chemical Levels</h2>
     </div>
-    <div className='backend-message'><p>{isVisible && <BackendMessage />}</p></div>
+    <div className='backend-message'>{isVisible && <BackendMessage />}</div>
     <div className='form-container'>
         <div className='Form'>
             <form onSubmit={handleSubmit}>
+            <label htmlFor="pool-size">Pool Size (gallons):</label>
+                <input 
+                    type="number" 
+                    id="pool-size" 
+                    name="pool-size" 
+                    value={poolSize} 
+                    onChange={(e) => setPoolSize(e.target.value)} 
+                    min="0" 
+                    step={'5000'}
+                    required 
+                /><br/><br/>
+
                 <label htmlFor="chlorine">Chlorine (ppm):</label>
                 <input 
                     type="number" 
@@ -82,7 +95,7 @@ function ChemicalLevelsForm() {
 
                 <input type="submit" value="Submit" />
             </form>
-            {submitted && <AlertMessage chlorine={chlorine} ph={ph} alkalinity={alkalinity} stabilizer={stabilizer} />}
+            {submitted && <AlertMessage poolSize={poolSize} chlorine={chlorine} ph={ph} alkalinity={alkalinity} stabilizer={stabilizer} />}
         </div>
     </div>
     <Footer />
