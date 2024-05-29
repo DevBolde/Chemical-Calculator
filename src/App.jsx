@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './App.css';
 import ChemicalLevelsForm from './components/ChemForm/Form';
 import { Route, Routes } from 'react-router-dom';
@@ -7,9 +6,6 @@ import Cover from './components/CoverPage';
 
 function App() {
   
-
-  
-
   return (
     <div className='app'>
       <Routes>
