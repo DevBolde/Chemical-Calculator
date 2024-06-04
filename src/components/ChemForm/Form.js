@@ -32,7 +32,7 @@ function ChemicalLevelsForm() {
     <div className='header'>
         <h2>Chemical Levels</h2>
     </div>
-    <div className='backend-message'><p>{isVisible && <BackendMessage />}</p></div>
+    <div className='backend-message'>{isVisible && <BackendMessage />}</div>
     <div className='form-container'>
         <div className='Form'>
             <form onSubmit={handleSubmit}>

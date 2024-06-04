@@ -1,33 +1,34 @@
 import React, { useState, useEffect } from "react";
-import '../Style/BackendMessage.css'; // Import CSS file for styling
+import '../Style/BackendMessage.css'; 
 import axios from "axios";
 
 const BackendMessage = () => {
-    const [message, setMessage] = useState('');
-    const [error, setError] = useState(null);
-    const [isVisible, setIsVisible] = useState(false);
+  const [message, setMessage] = useState('');
 
-    useEffect(() => {
-        axios.get('/api')
-            .then(response => {
-                setMessage(response.data.message1);
-                setIsVisible(true);
+  useEffect(() => {
+    const fetchMessage = async () => {
+      try {
+        const response = await axios.get('/backendmessage');
+        setMessage(response.data.message1);
+        setTimeout(() => {
+          setMessage(response.data.message2)
+        }, [2000])
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setMessage('Failed to fetch data');
+      }
+    };
 
-                setTimeout(() => {
-                    setMessage(response.data.message2);
-                }, 2000);
-            })
-            .catch(error => {
-                setError(error.message);
-            });
-    }, []);
-    
-    return (
-        <div className={`alert ${isVisible ? 'show' : ''}`}>
-            {message}
-        </div>
-    );
+    fetchMessage();
+  }, []);
+
+  return (
+    <div className='alert'>
+      {message}
+    </div>
+  );
 }
 
 export default BackendMessage;
+
 
