@@ -36,11 +36,28 @@ body {
 
 
 .Form label {
-    font-size: 23px; /* Adjust the font size as needed */
+    font-size: 23px; 
 }
-
 
 .backend-message{
   display:flex;
   justify-content: center;
+}
+
+/* BUTTON STYLES*/
+.button-group button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.button-group button.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-group button:hover {
+  background-color: #e0e0e0;
 }

@@ -75,32 +75,35 @@ function ChemicalLevelsForm() {
             <div className='form-container'>
                 <div className='Form'>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="chlorine">Chlorine (ppm):</label>
-                        <input
-                            type="number"
-                            id="chlorine"
-                            name="chlorine"
-                            value={chlorine}
-                            onChange={(e) => setChlorine(e.target.value)}
-                            min="0"
-                            max={10}
-                            required
-                        /><br/><br/>
+                        <label>Chlorine (ppm):</label><br/>
+                        <div className="button-group">
+                            {[0, 1, 2, 3, 5, 7.5, 10].map(level => (
+                                <button
+                                    type="button"
+                                    key={level}
+                                    onClick={() => setChlorine(level)}
+                                    className={chlorine === level ? 'selected' : ''}
+                                >
+                                    {level}
+                                </button>
+                            ))}
+                        </div><br/>
 
-                        <label htmlFor="ph">PH:</label>
-                        <input
-                            type="number"
-                            id="ph"
-                            name="ph"
-                            value={ph}
-                            onChange={(e) => setPH(e.target.value)}
-                            min="7"
-                            step={0.2}
-                            max={8}
-                            required
-                        /><br/><br/>
+                        <label htmlFor="ph">PH:</label><br/>
+                        <div className="button-group">
+                            {[7, 7.2, 7.4, 7.6, 7.8, 8].map(level => (
+                                <button
+                                    type="button"
+                                    key={level}
+                                    onClick={() => setPH(level)}
+                                    className={ph === level ? 'selected' : ''}
+                                >
+                                    {level}
+                                </button>
+                            ))}
+                        </div><br/>
 
-                        <label htmlFor="alkalinity">Alkalinity (ppm):</label>
+                        <label htmlFor="alkalinity">Alkalinity (ppm):</label><br/>
                         <input
                             type="number"
                             id="alkalinity"
@@ -113,16 +116,18 @@ function ChemicalLevelsForm() {
                         /><br/><br/>
 
                         <label htmlFor="stabilizer">Stabilizer (ppm):</label>
-                        <input
-                            type="number"
-                            id="stabilizer"
-                            name="stabilizer"
-                            value={stabilizer}
-                            onChange={(e) => setStabilizer(e.target.value)}
-                            min="0"
-                            step={10}
-                            required
-                        /><br/><br/>
+                        <div className="button-group">
+                            {[0, 10, 20, 30, 50, 60, 70, 80, 90, 100].map(level => (
+                                <button
+                                    type="button"
+                                    key={level}
+                                    onClick={() => setStabilizer(level)}
+                                    className={stabilizer === level ? 'selected' : ''}
+                                >
+                                    {level}
+                                </button>
+                            ))}
+                        </div><br/><br/>
 
                         <label htmlFor="poolSize">Pool Size (gallons):</label>
                         <input
@@ -139,13 +144,13 @@ function ChemicalLevelsForm() {
                         <input type="submit" value="Submit" />
                     </form>
                     {submitted && adjustments && (
-                        <div className='alert'>
-                            <h3>What you should add:</h3>
+                       <div className='alert'>
+                        <h3>What you should add:</h3>
                             <div className='column'>
-                            <p>Add {adjustments.chlorine.toFixed(2)} gallons of liquid chlorine</p>
-                            <p>Add {adjustments.ph.toFixed(2)} ounces of muriatic acid</p>
-                            <p>Add {adjustments.alkalinity.toFixed(2)} pounds of baking soda</p>
-                            <p>Add {adjustments.stabilizer.toFixed(2)} pounds of cyanuric acid</p>
+                                <p>Add {adjustments.chlorine.toFixed(2)} gallons of liquid chlorine</p>
+                                <p>Add {adjustments.ph.toFixed(2)} ounces of muriatic acid</p>
+                                <p>Add {adjustments.alkalinity.toFixed(2)} pounds of baking soda</p>
+                                <p>Add {adjustments.stabilizer.toFixed(2)} pounds of cyanuric acid</p>
                             </div>
                         </div>
                     )}
@@ -157,4 +162,5 @@ function ChemicalLevelsForm() {
 }
 
 export default ChemicalLevelsForm;
+
 
