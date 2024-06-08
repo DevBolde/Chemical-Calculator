@@ -30,11 +30,11 @@ function calculateStabilizerAdjustment(currentLevel, desiredLevel, poolSize) {
 }
 
 function ChemicalLevelsForm() {
+    const [poolSize, setPoolSize] = useState('');
     const [chlorine, setChlorine] = useState('');
     const [ph, setPH] = useState('');
     const [alkalinity, setAlkalinity] = useState('');
     const [stabilizer, setStabilizer] = useState('');
-    const [poolSize, setPoolSize] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [adjustments, setAdjustments] = useState(null);

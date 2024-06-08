@@ -1,13 +1,14 @@
 import React from 'react';
 import '../Style/AlertMessage.css'
 
-const AlertMessage = ({ chlorine, ph, alkalinity, stabilizer }) => {
+const AlertMessage = ({ poolSize, chlorine, ph, alkalinity, stabilizer }) => {
     return (
         <div className='alert'>
         <div className='info-section'>
             <h2>You Submitted:</h2>
             <div className='info'>
                 <div className='column'>
+                    <p>Pool Size (gallons): {poolSize}</p>
                     <p>Chlorine (ppm): {chlorine}</p>
                     <p>PH: {ph}</p>
                     <p>Alkalinity (ppm): {alkalinity}</p>

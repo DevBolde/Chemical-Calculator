@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../Style/BackendMessage.css'; 
 import axios from "axios";
+import '../Style/AlertMessage.css';
 
 const BackendMessage = () => {
   const [message, setMessage] = useState('');
@@ -30,5 +31,6 @@ const BackendMessage = () => {
 }
 
 export default BackendMessage;
+
 
 
