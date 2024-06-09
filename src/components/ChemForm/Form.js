@@ -7,14 +7,15 @@ import BackendMessage from '../BackendMessage';
 // Calculation functions
 function calculateChlorineAdjustment(currentLevel, desiredLevel, poolSize) {
     const chlorineDemand = desiredLevel - currentLevel;
-    const liquidChlorinePerGallon = 12.5; // 12.5% chlorine
-    return (chlorineDemand * poolSize) / liquidChlorinePerGallon;
+    const liquidChlorinePerGallon = 1.25; // pounds of available chlorine per gallon (12.5% solution)
+    const gallonsNeeded = (chlorineDemand * poolSize) / (liquidChlorinePerGallon * 10000);
+    return gallonsNeeded;
 }
 
 function calculatePHAdjustment(currentPH, desiredPH, poolSize, direction) {
     const acidDemand = direction === 'down' ? (currentPH - desiredPH) * 1.6 : (desiredPH - currentPH) * 1.25;
     const muriaticAcidPerOunce = 0.31; // 31.45% Muriatic Acid
-    return acidDemand * poolSize * muriaticAcidPerOunce / 10000;
+    return (acidDemand * poolSize * muriaticAcidPerOunce) / 10000;
 }
 
 function calculateAlkalinityAdjustment(currentLevel, desiredLevel, poolSize) {
@@ -25,9 +26,10 @@ function calculateAlkalinityAdjustment(currentLevel, desiredLevel, poolSize) {
 
 function calculateStabilizerAdjustment(currentLevel, desiredLevel, poolSize) {
     const stabilizerDemand = desiredLevel - currentLevel;
-    const cyanuricAcidPerPound = 13; // 13 ounces per 10,000 gallons raises CYA by 10 ppm
-    return (stabilizerDemand * poolSize) / (10 * 10000 * (cyanuricAcidPerPound / 16));
+    const cyanuricAcidPerPound = 0.8125; // 13 ounces per 10,000 gallons raises CYA by 10 ppm, converted to pounds
+    return (stabilizerDemand * poolSize) / (10 * 10000 * cyanuricAcidPerPound);
 }
+
 
 function ChemicalLevelsForm() {
     const [poolSize, setPoolSize] = useState('');

@@ -3,13 +3,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/db');
 
-router.get('/', (req, res) => {
-  const responseData = {
-    message1: 'Hello from the backend! :D',
-    message2: 'Goodbye now! <3'
-  };
-  res.send(responseData);
-});
+
 
 // Example route to fetch data from PostgreSQL
 router.get('/data', async (req, res) => {
