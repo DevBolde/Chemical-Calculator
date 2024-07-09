@@ -1,19 +1,20 @@
-/* Form.css */
-
 /* Target the list items (li) within the navigation */
 .navigation li {
-    color: white; /* Set the color of the list items */
-    list-style: none; /* Remove the bullet points */
-    font-size: 23px ;
+    display: inline; /* Display the list items inline */
+    padding: 10px; /* Add padding to the top and bottom of the list items */
 }
 
 /* Target the anchor (Link) elements within the list items */
 .navigation li a {
     color: white; /* Set the color of the anchor elements */
     text-decoration: none; /* Remove underline */
+    font: 1.5rem 'Roboto', sans-serif; /* Set the font of the anchor elements */
 }
 
 /* Target the visited state of the anchor elements */
 .navigation li a:visited {
     color: white; /* Set the color of visited links */
+}
+.navigation li a:hover {
+    color: hsl(0, 0%, 70%); /* Set the color of the anchor elements when hovered */
 }
