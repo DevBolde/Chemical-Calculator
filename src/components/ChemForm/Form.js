@@ -95,13 +95,13 @@ function ChemicalLevelsForm() {
                         <div className="button-group">
                             {[7, 7.2, 7.4, 7.6, 7.8, 8].map(level => (
                                 <button
-                                    type="button"
-                                    key={level}
-                                    onClick={() => setPH(level)}
-                                    className={ph === level ? 'selected' : ''}
-                                >
-                                    {level}
-                                </button>
+                                type="button"
+                                key={level}
+                                onClick={() => setPH(ph === level ? null : level)}
+                                className={ph === level ? 'selected' : ''}
+                              >
+                                {level}
+                              </button>
                             ))}
                         </div><br/>
 

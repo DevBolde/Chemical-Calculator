@@ -63,3 +63,7 @@ body {
   background-color: #e0e0e0;
   color: black;
 }
+.button-group button:hover.selected {
+  background-color: #1b4c67;
+  color: white;
+}
