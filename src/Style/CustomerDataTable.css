@@ -1,0 +1,67 @@
+/* Style the table */
+.customer-data-table {
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-collapse: collapse; 
+    background-color: lightslategrey;
+    
+   
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style the table header */
+th {
+    background-color: #cdcdcd;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style the table rows */
+tr {
+    background-color: #9c9c9c;
+}
+
+/* Style alternating rows */
+tr:nth-child(even) {
+    background-color: #767676;
+}
+
+/* Style table cells */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style table cells in the first column */
+td:first-child {
+    font-weight: bold;
+}
+.table-header {
+    position: relative;
+    margin-top: 40px; /* Increased to make room for the button */
+    text-align: center; /* Centers the table if it's not full width */
+}
+
+.toggle-button {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #e0e0e0;
+}
